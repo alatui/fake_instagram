@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fernandocisneros.fakeinstagram">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +18,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".controller.DetailActivity"
+            android:parentActivityName=".controller.MainActivity">
+            <meta-data android:name="android.Support.PARENT_ACTIVITY" android:value=".controller.MainActivity"/>
         </activity>
     </application>
 

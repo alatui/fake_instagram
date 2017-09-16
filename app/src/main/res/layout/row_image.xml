@@ -18,7 +18,7 @@
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:id="@+id/cover"
+            android:id="@+id/image_preview"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"/>
     </RelativeLayout>
