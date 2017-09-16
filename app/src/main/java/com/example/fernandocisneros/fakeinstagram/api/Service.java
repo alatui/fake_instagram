@@ -12,7 +12,7 @@ import retrofit2.http.GET;
 public interface Service {
 
 
-    @GET("/api/search/images?count=20&offset=1&q=cars")
+    @GET("/api/search/images?count=60&offset=1&q=cars")
     Call<DataResponse> getItems();
 
 }

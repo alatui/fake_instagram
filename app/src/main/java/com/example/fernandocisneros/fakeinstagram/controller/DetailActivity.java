@@ -31,7 +31,11 @@ public class DetailActivity extends AppCompatActivity {
 
         String instagram_image = getIntent().getExtras().getString("instagram_image");
 
-        Glide.with(this).load(instagram_image).into(imageView);
+        Glide.with(this)
+                .load(instagram_image)
+                .placeholder(R.drawable.load3)
+                .centerCrop()
+                .into(imageView);
 
         getSupportActionBar().setTitle("Image preview");
 

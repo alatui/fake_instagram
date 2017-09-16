@@ -10,9 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.fernandocisneros.fakeinstagram.controller.DetailActivity;
 import com.example.fernandocisneros.fakeinstagram.model.Item;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -39,9 +39,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ItemAdapter.ViewHolder viewHolder, int i) {
-        Picasso.with(context)
+        Glide.with(context)
                 .load(items.get(i).getMedia())
-                .placeholder(R.drawable.load)
+                .placeholder(R.drawable.load3)
+                .centerCrop()
                 .into(viewHolder.imageView);
     }
 
@@ -67,7 +68,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                         intent.putExtra("instagram_image", items.get(pos).getMedia());
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(intent);
-                        Toast.makeText(view.getContext(), "Image loaded", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Loading...", Toast.LENGTH_SHORT).show();
 
                     }
                 }
