@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FakeInstagram</string>
+    <string name="internet">No internet connection</string>
 </resources>
