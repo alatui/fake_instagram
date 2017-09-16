@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".controller.DetailActivity"
+            android:screenOrientation="landscape"
             android:parentActivityName=".controller.MainActivity">
             <meta-data android:name="android.Support.PARENT_ACTIVITY" android:value=".controller.MainActivity"/>
         </activity>
