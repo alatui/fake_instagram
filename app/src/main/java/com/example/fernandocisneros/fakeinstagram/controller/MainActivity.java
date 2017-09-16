@@ -14,8 +14,8 @@ import android.widget.Toast;
 import com.example.fernandocisneros.fakeinstagram.R;
 import com.example.fernandocisneros.fakeinstagram.api.Client;
 import com.example.fernandocisneros.fakeinstagram.api.Service;
+import com.example.fernandocisneros.fakeinstagram.model.DataResponse;
 import com.example.fernandocisneros.fakeinstagram.model.Item;
-import com.example.fernandocisneros.fakeinstagram.model.ItemResponse;
 import com.example.fernandocisneros.fakeinstagram.ItemAdapter;
 
 
@@ -68,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
         try {
             Client Client = new Client();
             Service apiService = Client.getClient().create(Service.class);
-            Call<ItemResponse> call = apiService.getItems();
-            call.enqueue(new Callback<ItemResponse>() {
+            Call<DataResponse> call = apiService.getItems();
+            call.enqueue(new Callback<DataResponse>() {
                 @Override
-                public void onResponse(Call<ItemResponse> call, Response<ItemResponse> response) {
+                public void onResponse(Call<DataResponse> call, Response<DataResponse> response) {
                     List<Item> items = response.body().getItems();
                     recyclerView.setAdapter(new ItemAdapter(getApplicationContext(), items));
                     recyclerView.smoothScrollToPosition(0);
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<ItemResponse> call, Throwable t) {
+                public void onFailure(Call<DataResponse> call, Throwable t) {
                     Log.d("Error", t.getMessage());
                     Toast.makeText(MainActivity.this, "Error fetching data!", Toast.LENGTH_SHORT).show();
                     Disconected.setVisibility(View.VISIBLE);

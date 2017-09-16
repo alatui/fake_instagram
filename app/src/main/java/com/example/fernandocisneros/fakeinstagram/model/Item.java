@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Item {
 
-    /*@SerializedName("title")
+    @SerializedName("title")
     @Expose
     private String title;
 
@@ -58,9 +58,9 @@ public class Item {
     }
     public void setMedia_fullsize(String media_fullsize) {
         this.media_fullsize = media_fullsize;
-    }*/
+    }
 
-
+/*
     @SerializedName("login")
     @Expose
     private String login;
@@ -89,7 +89,7 @@ public class Item {
     public void setAvatar_url(String avatar_url) {
         this.avatar_url = avatar_url;
     }
-
+*/
 
 
 }

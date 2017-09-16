@@ -1,6 +1,6 @@
 package com.example.fernandocisneros.fakeinstagram.api;
 
-import com.example.fernandocisneros.fakeinstagram.model.ItemResponse;
+import com.example.fernandocisneros.fakeinstagram.model.DataResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -12,7 +12,7 @@ import retrofit2.http.GET;
 public interface Service {
 
 
-    @GET("/search/users?q=language:java+location:dublin")
-    Call<ItemResponse> getItems();
+    @GET("/api/search/images?count=20&offset=1&q=cars")
+    Call<DataResponse> getItems();
 
 }

@@ -40,7 +40,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ItemAdapter.ViewHolder viewHolder, int i) {
         Picasso.with(context)
-                .load(items.get(i).getAvatar_url())
+                .load(items.get(i).getMedia())
                 .placeholder(R.drawable.load)
                 .into(viewHolder.imageView);
     }
@@ -64,7 +64,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                     if(pos != RecyclerView.NO_POSITION) {
                         Item clickedDataItem = items.get(pos);
                         Intent intent = new Intent(context, DetailActivity.class);
-                        intent.putExtra("instagram_image", items.get(pos).getAvatar_url());
+                        intent.putExtra("instagram_image", items.get(pos).getMedia());
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(intent);
                         Toast.makeText(view.getContext(), "Image loaded", Toast.LENGTH_SHORT).show();

@@ -9,7 +9,7 @@ import java.util.List;
  * Created by fernandocisneros on 16/09/2017.
  */
 
-public class ItemResponse {
+public class Result {
 
     @SerializedName("items")
     @Expose
